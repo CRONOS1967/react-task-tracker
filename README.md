@@ -11,6 +11,10 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+### `npm run server`
+To start a local database.\
+Open [http://localhost/tasks:3100](http://localhost/tasks:3100) to view it in the browser.
+
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
