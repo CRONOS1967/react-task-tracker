@@ -18,20 +18,20 @@ function App() {
     getTasks();
   }, []);
   const fetchTasks = async () => {
-    const res = await fetch("http://localhost:3100/tasks");
+    const res = await fetch("https://my-json-server.typicode.com/CRONOS1967/Rest-apis/tasks");
     const data = await res.json();
     // console.log(data);
     return data;
   };
   const fetchTask = async (id) => {
-    const res = await fetch(`http://localhost:3100/tasks/${id}`);
+    const res = await fetch(`https://my-json-server.typicode.com/CRONOS1967/Rest-apis/tasks/${id}`);
     const data = await res.json();
     // console.log(data);
     return data;
   };
   const delete_task = async (id) => {
     // console.log('delete', id)
-    await fetch(`http://localhost:3100/tasks/${id}`, { method: "DELETE" });
+    await fetch(`https://my-json-server.typicode.com/CRONOS1967/Rest-apis/tasks/${id}`, { method: "DELETE" });
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
@@ -42,7 +42,7 @@ function App() {
       reminder: !(await fetchTask(id)).reminder,
     };
 
-    const res = await fetch(`http://localhost:3100/tasks/${id}`, {
+    const res = await fetch(`https://my-json-server.typicode.com/CRONOS1967/Rest-apis/tasks/${id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
@@ -61,7 +61,7 @@ function App() {
 
   const addTask = async (task) => {
     // console.log(task);
-    const res = await fetch("http://localhost:3100/tasks", {
+    const res = await fetch("https://my-json-server.typicode.com/CRONOS1967/Rest-apis/tasks", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(task),
